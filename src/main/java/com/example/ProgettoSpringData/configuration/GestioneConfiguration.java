@@ -34,7 +34,7 @@ public class GestioneConfiguration {
 
     @Bean(name = "prenotazione")
     public Prenotazione prenotazione(){
-        return new Prenotazione(LocalDate.now(),LocalDate.now().plusDays(1),utente(),postazione());
+        return new Prenotazione(LocalDate.now(),utente(),postazione());
     }
 
 }

@@ -1,7 +1,8 @@
 package com.example.ProgettoSpringData.service;
 
-import com.example.ProgettoSpringData.model.Edificio;
+
 import com.example.ProgettoSpringData.model.Postazione;
+import com.example.ProgettoSpringData.repository.PostazioneDAORepository;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,7 +14,14 @@ public class PostazioneService {
     @Qualifier("postazione")
     ObjectProvider<Postazione> postazioneProvider;
 
-    public Postazione creaEdificio(){
+    @Autowired
+    PostazioneDAORepository postazioneDAO;
+
+    public Postazione creaPostazione(){
         return postazioneProvider.getObject();
+    }
+
+    public void salvaPostazione(Postazione postazione) {
+        postazioneDAO.save(postazione);
     }
 }

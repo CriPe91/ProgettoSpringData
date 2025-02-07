@@ -2,14 +2,12 @@ package com.example.ProgettoSpringData.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
 
 @Entity
 public class Edificio {
