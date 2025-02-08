@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 public class EdificioService {
 
     @Autowired @Qualifier("edificio") ObjectProvider<Edificio> edificioProvider;
+    @Autowired @Qualifier("edificio1") ObjectProvider<Edificio> edificio1Provider;
+    @Autowired @Qualifier("edificio2") ObjectProvider<Edificio> edificio2Provider;
 
     @Autowired EdificioDAORepository edificioDAO;
 
@@ -20,6 +22,20 @@ public class EdificioService {
 
     public void salvaEdificio(Edificio edificio) {
        edificioDAO.save(edificio);
+    }
+    public Edificio creaEdificio1(){
+        return edificio1Provider.getObject();
+    }
+
+    public void salvaEdificio1(Edificio edificio) {
+        edificioDAO.save(edificio);
+    }
+    public Edificio creaEdificio2(){
+        return edificio2Provider.getObject();
+    }
+
+    public void salvaEdificio2(Edificio edificio) {
+        edificioDAO.save(edificio);
     }
 
 

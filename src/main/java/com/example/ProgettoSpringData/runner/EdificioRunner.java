@@ -18,5 +18,14 @@ public class EdificioRunner implements CommandLineRunner {
 
 //        Edificio e1 = edificioService.creaEdificio();
 //        edificioService.salvaEdificio(e1);
+//        System.out.println("Edificio creato con successo!!!");
+
+//         Edificio e2 = edificioService.creaEdificio1();
+//         edificioService.salvaEdificio1(e2);
+//        System.out.println("Edificio1 creato con successo!!!");
+
+//        Edificio e3 = edificioService.creaEdificio2();
+//        edificioService.salvaEdificio1(e3);
+//        System.out.println("Edificio2 creato con successo!!!");
     }
 }

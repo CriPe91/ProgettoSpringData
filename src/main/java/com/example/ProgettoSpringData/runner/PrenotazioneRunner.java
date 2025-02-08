@@ -17,5 +17,16 @@ public class PrenotazioneRunner implements CommandLineRunner {
 
 //        Prenotazione p1 = prenotazioneService.creaPrenotazione();
 //        prenotazioneService.salvaPrenotazione(p1);
+//        System.out.println("Prenotazione creata con successo!!!");
+
+//        Prenotazione p2 = prenotazioneService.creaPrenotazione1();
+//        prenotazioneService.salvaPrenotazione1(p2);
+//        System.out.println("Prenotazione1 creata con successo!!!");
+
+//        Prenotazione p3 = prenotazioneService.creaPrenotazione2();
+//        prenotazioneService.salvaPrenotazione2(p3);
+//        System.out.println("Prenotazione2 creata con successo!!!");
+
+
     }
 }
