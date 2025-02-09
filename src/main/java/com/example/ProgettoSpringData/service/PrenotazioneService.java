@@ -2,6 +2,7 @@ package com.example.ProgettoSpringData.service;
 
 import com.example.ProgettoSpringData.model.Postazione;
 import com.example.ProgettoSpringData.model.Prenotazione;
+import com.example.ProgettoSpringData.model.Utente;
 import com.example.ProgettoSpringData.repository.PrenotazioneDAORepository;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +47,18 @@ public class PrenotazioneService {
     }
 
 
+    public void nuovaPrenotazione(Utente utente, Postazione postazione, LocalDate data) {
+        long count = prenotazioneDAO.stampaPrenotazioniPerPostazioneEData(postazione.getId(), data);
+
+            if (count > 0) {
+                System.out.println("Postazione occupata!!!");;
+            }else {
+                Prenotazione prenotazione = new Prenotazione();
+                prenotazione.setUtente(utente);
+                prenotazione.setPostazione(postazione);
+                prenotazione.setDataPrenotazione(data);
+                prenotazioneDAO.save(prenotazione);
+                System.out.println("Prenotazione effettuata con successo!!!"); ;
+            }
+    }
 }

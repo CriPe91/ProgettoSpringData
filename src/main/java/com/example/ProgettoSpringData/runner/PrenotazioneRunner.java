@@ -1,15 +1,25 @@
 package com.example.ProgettoSpringData.runner;
 
 import com.example.ProgettoSpringData.model.Prenotazione;
+import com.example.ProgettoSpringData.repository.PostazioneDAORepository;
+import com.example.ProgettoSpringData.repository.UtenteDAORepository;
+import com.example.ProgettoSpringData.service.PostazioneService;
 import com.example.ProgettoSpringData.service.PrenotazioneService;
+import com.example.ProgettoSpringData.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class PrenotazioneRunner implements CommandLineRunner {
     @Autowired
     private PrenotazioneService prenotazioneService;
+    @Autowired
+    UtenteDAORepository utenteDAO;
+    @Autowired
+    PostazioneDAORepository postazioneDAO;
 
     @Override
     public void run(String... args) throws Exception {
@@ -27,6 +37,6 @@ public class PrenotazioneRunner implements CommandLineRunner {
 //        prenotazioneService.salvaPrenotazione2(p3);
 //        System.out.println("Prenotazione2 creata con successo!!!");
 
-
+          prenotazioneService.nuovaPrenotazione(utenteDAO.findById(4),postazioneDAO.findById(6), LocalDate.of(2025,2,14));
     }
 }

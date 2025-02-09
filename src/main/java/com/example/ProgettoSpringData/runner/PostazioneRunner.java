@@ -1,5 +1,6 @@
 package com.example.ProgettoSpringData.runner;
 
+import com.example.ProgettoSpringData.enumeration.Tipo;
 import com.example.ProgettoSpringData.model.Postazione;
 import com.example.ProgettoSpringData.service.PostazioneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,7 @@ public class PostazioneRunner implements CommandLineRunner {
 //        Postazione pos3 = postazioneService.creaPostazione2();
 //        postazioneService.salvaPostazione2(pos3);
 //        System.out.println("Postazione2 creata con successo!!!");
+
+          postazioneService.cercaPostazionePerTipoECitta(Tipo.PRIVATO,"Roma");
     }
 }

@@ -3,16 +3,15 @@ package com.example.ProgettoSpringData.model;
 
 import com.example.ProgettoSpringData.enumeration.Tipo;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 
 @Entity
 public class Postazione {
@@ -45,5 +44,17 @@ public class Postazione {
         this.numMaxOccupanti = numMaxOccupanti;
         this.riservato = riservato;
         this.edificio = edificio;
+    }
+
+    @Override
+    public String toString() {
+        return "Postazione{" +
+                "edificio=" + edificio +
+                ", riservato=" + riservato +
+                ", numMaxOccupanti=" + numMaxOccupanti +
+                ", tipoPostazione=" + tipoPostazione +
+                ", descrizione='" + descrizione + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

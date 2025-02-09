@@ -12,6 +12,6 @@ import java.util.List;
 public interface PostazioneDAORepository extends JpaRepository<Postazione, Long> {
     Postazione findById(long id);
 
-    @Query("SELECT p FROM Postazione p WHERE p.tipoPostazione = :tipoPostazione AND p.edificio.citta = :citta")
-    List<Postazione> findByTipoAndCitta(Tipo tipoPostazione, String citta);
+    @Query("SELECT p FROM Postazione p JOIN p.edificio e WHERE p.tipoPostazione = :tipoPostazione AND e.citta = :citta")
+    List<Postazione> cercaPostazionePerTipoECitta(Tipo tipoPostazione, String citta);
 }
